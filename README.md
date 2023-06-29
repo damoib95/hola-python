@@ -7,6 +7,7 @@ He creado este repositorio con el objetivo de compartir mis conocimientos con to
 ## Listado de Contenidos (TOC)
 1. [Introducción 👏🏻](https://github.com/damoib95/hola-python/blob/main/1_introduccion.ipynb)
 2. [Variables 📦](https://github.com/damoib95/hola-python/blob/main/2_variables.ipynb)
+3. [Tipos de datos 🎹](https://github.com/damoib95/hola-python/blob/main/3_tipos_de_datos.ipynb)
 
 ---
 ## Notas

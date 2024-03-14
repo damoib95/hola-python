@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1710381622.12347 "/Users/damoib/Documents/hola-python/libro/main.tex" "main.pdf" "main" 1710381622.52757 0
-  "/Users/damoib/Documents/hola-python/libro/main.tex" 1710381006.02464 1147 f89ef8887be2ae42a0b9598344bdb22f ""
+["pdflatex"] 1710383073.12191 "/Users/damoib/Documents/hola-python/libro/main.tex" "main.pdf" "main" 1710383073.53358 0
+  "/Users/damoib/Documents/hola-python/libro/main.tex" 1710381809.14196 1147 f89ef8887be2ae42a0b9598344bdb22f ""
   "/Users/damoib/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1710380790.44622 85123 c54c06da63cea9ae4197a437a6963fef ""
   "/Users/damoib/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt0800.pk" 1710381007.53392 15192 9c978677088a8ae741feaccebecf692c ""
   "/Users/damoib/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1707098181.23805 21033917 d785d454aa39eb620254f54d2023a26e ""
@@ -68,10 +68,10 @@
   "/Users/damoib/Library/Application Support/MiKTeX/texmfs/install/tex/latex/universalis/universalis.sty" 1710380784.68488 2724 67379cd28fcf636af018ea33725fd12f ""
   "/Users/damoib/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1710116260.86225 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/Users/damoib/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.sty" 1710380786.75632 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "capitulo_1.aux" 1710381622.44869 793 76630c559a5b8270464005d77d296698 "pdflatex"
-  "capitulo_1.tex" 1710381621.66257 589 41c2e2166edcdb7095ce1ea594bd67dc ""
-  "main.aux" 1710381622.44904 156 39c097d65fd97a404674d97b26c33695 "pdflatex"
-  "main.tex" 1710381006.02464 1147 f89ef8887be2ae42a0b9598344bdb22f ""
+  "capitulo_1.aux" 1710383073.45283 793 76630c559a5b8270464005d77d296698 "pdflatex"
+  "capitulo_1.tex" 1710383072.65641 995 e2dbab8ea115fa6346650f9781cfe5ee ""
+  "main.aux" 1710383073.45314 156 39c097d65fd97a404674d97b26c33695 "pdflatex"
+  "main.tex" 1710381809.14196 1147 f89ef8887be2ae42a0b9598344bdb22f ""
   (generated)
   "capitulo_1.aux"
   "main.aux"

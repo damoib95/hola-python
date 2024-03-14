@@ -5,9 +5,10 @@ Bienvenido a mi curso de programación introductoria a Python.
 He creado este repositorio con el objetivo de compartir mis conocimientos con todo el mundo de la manera más efectiva posible.
 
 ## Listado de Contenidos (TOC)
-1. [Introducción 👏🏻](https://github.com/damoib95/hola-python/blob/main/1_introduccion.ipynb)
-2. [Variables 📦](https://github.com/damoib95/hola-python/blob/main/2_variables.ipynb)
-3. [Tipos de datos 🎹](https://github.com/damoib95/hola-python/blob/main/3_tipos_de_datos.ipynb)
+1. Introducción 👏🏻
+2. Variables 📦
+3. Tipos de datos 🎹
+4. Operadores aritméticos 🧮
 
 ---
 ## Notas

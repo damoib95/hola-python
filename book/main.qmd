@@ -1,0 +1,24 @@
+---
+title: "¡Hola, Python!"
+format: pdf
+--- 
+
+# Introducción
+
+En este capítulo creamos nuestro primer código de programación en Python, el cual mostrará un saludo en pantalla al ejecutar el programa.
+
+## Mi primer programa
+
+La función ```print``` permite *desplegar mensajes* en la pantalla. Escribe el siguiente código teniendo cuidado de escribir correctamente el nombre de la función, luego, dentro de paréntesis deberás colocar tu mensaje utilizando comillas simples, ``'``, o dobles, ``"``, al inicio
+y al final.
+
+```{python}
+print('Hello, world!')
+```
+
+## Equation
+
+Si Python interpretó correctamente tu instrucción, entonces, deberías ver el mensaje anterior en la salida.
+
+Es una práctica común crear el código para desplegar un mensaje de ```Hello, world!``` cuando se aprende un lenguaje nuevo
+de programación para comprobar que todo se encuentra configurado correctamente.

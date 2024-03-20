@@ -1,0 +1,20 @@
+project:
+  type: book
+
+book:
+  title: "¡Hola, Python!"
+  author: "Diego Morales"
+  date: "3/19/2024"
+  chapters:
+    - index.qmd
+    - 01_intro.qmd
+    - 02_var.qmd
+
+bibliography: references.bib
+
+format:
+  #html:
+    #theme: cosmo
+  pdf:
+    documentclass: scrreprt
+lang: es

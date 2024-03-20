@@ -1,0 +1,46 @@
+# Variables
+Una variable es un espacio de memoria en el cual podemos almacenar valores. 
+
+Por ejemplo, en el siguiente código. Se asigna el valor ```4``` a una variable llamada ```x```.
+
+```{python}
+x = 4
+```
+
+## Características
+
+Las variables poseen las siguientes características:
+1.   Puede almacenar distintos tipos de datos.
+2.   Su valor se puede modificar.
+3.   Se referencian por un nombre único (idealmente, significativo).
+
+Observaciones sobre nombres de variables:
+1.   Python diferencia entre mayúsculas y minúsculas.
+2.   No pueden iniciar con números.
+3.   No pueden contener espacios.
+4.   No se pueden utilizar **palabras reservadas** (más adelante aprenderemos qué significan).
+
+```{python}
+a = 100
+print(a)
+```
+
+Si asignamos un nuevo valor a la misma variable, el valor anterior es reemplazado.
+
+```{python}
+a = 100
+a = 200
+print(a)
+```
+
+Si se desean crear variables utilizando nombres significativos conformados por varias palabras, se recomienda utilizar la “notación de camello” (*camelCase*):
+
+```{python}
+correoElectronico = 'juan_lopez2020@gmail.com'
+```
+
+También pueden separarse las palabras utilizando **guion bajo**, sin embargo, este tipo de notación suele utilizarse para funciones.
+
+```{python}
+correo_electronico = 'juan_lopez2020@gmail.com'
+```

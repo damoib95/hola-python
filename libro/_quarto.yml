@@ -10,6 +10,7 @@ book:
     - 01_intro.qmd
     - 02_var.qmd
     - 03_tipos.qmd
+    - 04_op_arit.qmd
 
 bibliography: references.bib
 

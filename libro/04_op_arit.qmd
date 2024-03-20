@@ -93,8 +93,6 @@ Las operaciones se efectúan en el siguiente orden:
 3.   Multiplicación, División, División entera, Módulo: *, /, //, %
 4.   Suma, Resta: +, -
 
-### Ejemplo
-
 Si quisieramos convertir 100°F a °C. Se utilizaría la siguiente expresión:
 
 $(100 - 32) * 5/9$

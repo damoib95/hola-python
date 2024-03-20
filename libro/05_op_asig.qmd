@@ -71,7 +71,6 @@ print(areaRectangulo)
 
 Además del operador de asignación **=**, existen otros operadores de asignación que realizan operaciones aritméticas y asignan el resultado a la vez.
 
-### Ejemplo
 Si tenemos una variable **x = 3** y queremos aumentar 2 su valor. Utilizando el operador **=**. Haríamos lo siguiente:
 
 ```{python}
@@ -80,8 +79,6 @@ print(x)
 x = x + 2
 print(x)
 ```
-
-### Ejemplo
 
 Si tenemos una variable **cuotasRestantes = 24** y queremos restarle 6. El código sería:
 

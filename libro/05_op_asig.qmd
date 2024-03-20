@@ -1,0 +1,139 @@
+# Operadores de asignación
+
+Los operadores de asignación se utilizan para asignar un valor a una variable.
+
+Por ejemplo, si queremos asignar un valor ```200.0``` a una variable ```x```  utilizamos el operador ```=``` de la siguienta manera:
+
+```x = 200```
+
+::: {.callout-note}
+Nótese que la asignación se realiza de la derecha de la igualdad a la izquierda: $x \leftarrow 200.0$
+:::
+
+```{python}
+100 + 717.345 + 0
+```
+
+## Sustracción
+
+La operación de resta entre un valor ```a``` y un valor ```b``` se realiza utilizando el operador ```-```: $a - b$
+
+::: {.callout-caution}
+Nótese que la siguiente operación debería dar un resultado exacto, sin embargo, las computadoras manejan "números de punto flotante" los cuales no poseen una representación binaria de valores limitada y podrían mostrar valores poco precisos.
+:::
+
+```{python}
+x = 200.0
+print(x)
+```
+
+Los resultados de expresiones se pueden almacenar en variables.
+
+Por ejemplo, si quisieramos sumar el costo de tres productos de una compra se suma el precio de cada uno (```249.99 + 9.99 + 50```) y se almacena el resultado final en una variable (```costoTotal```).
+
+```{python}
+costoTotal = 249.99 + 9.99 + 50
+print(costoTotal)
+```
+
+Esto nos permite almacenar resultados que podríamos utilizar posteriormente en el código.
+
+Por ejemplo, asumamos que se le aplica al cliente un descuento del $20\%$ sobre el total de la compra. Ya que tenemos una variable con el costo total (```costoTotal```) solo habría que multiplicar (```*```) por el porcentaje a pagar (```1-descuento```) y almacenar el resultado final en otra variable (```costoFinal```).
+
+```{python}
+descuento = 0.20
+costoFinal = costoTotal*(1-descuento)
+print(costoFinal)
+```
+
+Otra ventaja de implementar variables en lugar de colocar valores fijos es que podemos modificar su valor para obtener distintos resultados.
+
+Por ejemplo, si queremos calcular el área de un rectángulo de $20$ metros por $40$ metros, la fórmula sería:
+
+$Área_{rectángulo} = 20*40$
+
+El resultado siempre retornará $800$.
+
+$Área_{rectángulo} = base *altura$
+
+Podríamos definir una variable para la base y otra para la altura.
+
+De esta manera, si queremos calcular el área de otro rectángulo, solo debemos cambiar los valores de esas variables.
+
+```{python}
+base = 35
+altura = 40
+areaRectangulo = base*altura
+print(areaRectangulo)
+```
+
+## Operadores de asignación y aritméticos
+
+Además del operador de asignación **=**, existen otros operadores de asignación que realizan operaciones aritméticas y asignan el resultado a la vez.
+
+### Ejemplo
+Si tenemos una variable **x = 3** y queremos aumentar 2 su valor. Utilizando el operador **=**. Haríamos lo siguiente:
+
+```{python}
+x = 3
+print(x)
+x = x + 2
+print(x)
+```
+
+### Ejemplo
+
+Si tenemos una variable **cuotasRestantes = 24** y queremos restarle 6. El código sería:
+
+```{python}
+cuotasRestantes = 24
+print(cuotasRestantes)
+cuotasRestantes = cuotasRestantes - 6
+cuotasRestantes = cuotasRestantes - 3
+print(cuotasRestantes)
+```
+
+En los ejemplos anteriores, para aumentar o disminuir el valor de una misma variable. Primero, se lee el valor actual de la variable, se realiza la operación y, finalmente, se asigna el resultado a la misma variable.
+
+```
+tareas = tareas + 2
+```
+
+**En estos casos especiales** cuando queremos modificar el valor de una variable y almacenar el resultado en la misma variable. Podemos hacer uso de los operadores de aritméticos en cojunto con la asignación. De la siguiente forma:
+
+```
+tareas += 2
+```
+
+Primero, colocamos la variable que queremos aumentar, luego, el operador aritmético seguido del operador de asignación, y finalmente, colocamos el valor.
+
+Los dos códigos anteriores son equivalentes.
+
+```{python}
+horasEstudio = 1
+print(horasEstudio)
+horasEstudio = horasEstudio + 2
+print(horasEstudio)
+```
+
+```{python}
+horasEstudio = 1
+print(horasEstudio)
+horasEstudio += 2
+print(horasEstudio)
+```
+
+Se puede utilizar cualquier operador aritmético y también podríamos sumar valores de variables en lugar de constantes.
+
+```{python}
+calificacion = 90
+print("Calificación inicial", calificacion, "pts")
+
+extras = 10
+calificacion += extras
+print("Calificación con extra", calificacion, "pts")
+
+bono = 1.1
+calificacion *= bono
+print("La calificación final con el extra y el bono es", calificacion)
+```

@@ -11,6 +11,7 @@ book:
     - 02_var.qmd
     - 03_tipos.qmd
     - 04_op_arit.qmd
+    - 05_op_asig.qmd
 
 bibliography: references.bib
 

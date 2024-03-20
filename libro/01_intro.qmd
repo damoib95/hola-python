@@ -9,7 +9,7 @@ y al final.
 
 ```{python}
 #| label: code-primer_programa
-print('Hello, world!')
+print('¡Hola, Python! 2024')
 ```
 
 Si Python interpretó correctamente tu instrucción, entonces, deberías ver el mensaje anterior en la salida.

@@ -9,6 +9,7 @@ book:
     - index.qmd
     - 01_intro.qmd
     - 02_var.qmd
+    - 03_tipos.qmd
 
 bibliography: references.bib
 

@@ -1,0 +1,104 @@
+# Tipos de datos
+
+Existen una gran cantidad de tipos de datos en Python: *Texto, numéricos, secuencia, mapeos, conjuntos, booleanos, binarios*.
+
+## Entero (int)
+Dato numérico utilizado para representar números enteros.
+
+```{python}
+cantidadAlumnos = 256
+print(cantidadAlumnos)
+```
+
+
+## Flotante (float)
+Dato numérico utilizado para representar números reales, es decir, números con cifras decimales.
+
+```{python}
+alturaMetros = 1.75
+print(alturaMetros)
+```
+
+## Texto (str)
+Cadena de caracteres: letras, números y símbolos.
+El valor **se debe colocar dentro de comillas simples o dobles** para indicar que es un ```str```.
+
+```{python}
+movie = "The Lord of the Rings: The Return of the King (2003)"
+cantidadAlumnos2 = "256"
+alturaMetros2 = "1.75"
+print(movie)
+print(cantidadAlumnos2)
+print(alturaMetros2)
+```
+
+::: {.callout-warning}
+Se debe tener especial cuidado al manejar números representados como cadenas de caracteres ya que Python no los interpretará como valores numéricos (```int``` o ```float```).
+:::
+
+## Función type
+La función ```type()``` se puede utilizar para conocer el tipo de dato de una variable.
+
+```{python}
+print(type(cantidadAlumnos))
+print(type(cantidadAlumnos2))
+```
+
+## Función input
+
+La función `input()` se utiliza para solicitar al usuario una entrada. El programa se detiene, hasta que el usuario presiona la tecla **Enter** en su teclado (luego de escribir el ingreso). Esta función, retorna una cadena de caracteres (`str`) con el ingreso del usuario.
+
+```{python}
+#| eval: false
+nom = input("¿Cuál es su nombre? ")
+```
+
+Por lo tanto, puedes utilizar esta función para asignar valores a variables al iniciar la ejecución de tu programa.
+
+Ahora veamos qué sucede si solicitamos al usuario un número que utilizaremos para realizar una operación más adelante.
+
+```{python}
+#| eval: false
+age = input("Ingrese su edad: ")
+```
+
+Esa línea de código sería equivalente a que tomemos el valor devuelto por la función ```input``` y lo asignemos en la variable ```age```. Sería igual al siguiente código.
+
+``` {python}
+#| eval: false
+age = '28'
+birthYear = 2024 - age
+print("Usted nació en el año ", birthYear)
+```
+
+Python nos muestra un mensaje de error (TypeError) debido a que la operación de resta (`-`) no está soportada entre variables numéricas (`int` o `float`) y cadenas de caracteres (`str`).
+
+::: {.callout-important}
+Es completamente normal (y esperado) obtener errores al escribir código, incluso para programadores experimentados. Suelen aparecer cuando Python no es capaz de interpretar una instrucción (SintaxError) o porque se está realizando una acción inválida (como la anterior). Lo importante es comprender el error y corregirlo, lo cual será cada vez más sencillo con la práctica.
+:::
+
+En este caso, podríamos realizar una conversión de datos para que la variable `age` se interprete como un entero.
+
+```{python}
+age = '28'
+age = int(age) # conversion a entero (casting)
+birthYear = 2024 - age
+print("Usted nació en el año ", birthYear)
+```
+
+## Conversión de datos
+
+Para convertir entre distintos tipos de datos, simplemente debemos especificar el tipo de dato y colocar el valor dentro de paréntesis.
+
+1. **int()**
+2. **float()**
+3. **str()**
+
+Por ejemplo, si queremos convertir una variable **`x = "99"`** a un valor numérico.
+
+```{python}
+x = "99"
+print(type(x))
+x = int(x)
+print(type(x))
+```

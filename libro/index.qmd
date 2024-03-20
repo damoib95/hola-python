@@ -2,4 +2,6 @@
 
 Bienvenido a mi curso de programación introductoria a Python.
 
-He creado este repositorio con el objetivo de compartir mis conocimientos con todo el mundo de la manera más efectiva posible.
+He creado este libro con el objetivo de compartir mis conocimientos con todo el mundo de la manera más efectiva posible.
+
+_And what if instead of it being in the right hands, it was in everyone's hands? -Steve Jobs [Film] (2015)_

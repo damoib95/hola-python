@@ -1,0 +1,165 @@
+# Operadores de comparación
+
+Los operadores de comparación se utilizan para comparar dos operandos. El resultado de la operación retornará un valor booleano (```True``` o ```False```).
+
+Las comparaciones que se pueden realizar son las siguientes:
+
+1. Igualdad: ```==```
+2. Desigualdad: ```!=```
+3. Menor que: ```<```
+4. Mayor que: ```>```
+5. Menor o igual que: ```<=```
+6. Mayor o igual que: ```>=```
+
+## Igualdad
+
+Si el operando de la **izquierda** es igual al operando de la **derecha**, entonces, el resultado es ```True```. De lo contrario, es ```False```.
+
+Por ejemplo, podríamos crear las siguientes variables.
+
+```{python}
+a = 5
+b = 7
+c = 5
+```
+
+Al evaluar la igualdad entre ```a``` y ```b```, lo escribiríamos de la siguiente manera y obtendríamos un resultado ```True```.
+
+```{python}
+a == b
+```
+
+> Nótese que el resultado es el mismo si hubiéramos escrito los operandos al revés, es decir, ```b == a```.
+
+Si ahora evaluamos la igualdad entre ```a``` y ```c```, el resultado será ```False```.
+
+```{python}
+a == c
+```
+
+Finalmente, creamos una variable de tipo ```str``` con el valor de ```'5'``` y comparamos si es igual a la variable ```a```.
+
+```{python}
+d = '5'
+d == a
+```
+
+A simple vista, los valores de cada variable son idénticos. Sin embargo, Python no considera iguales los valores numéricos al compararse con un número representado como ```str```.
+
+> Importante asegurarse que al realizar comparaciones las condiciones de cada variable sean lo más similares posibles. Por ejemplo, el código anterior se podría comparar perfectamente si realizamos un _casting_ a entero: ```int(d)```
+
+```{python}
+int(d) == a
+```
+
+## Desigualdad
+
+Si el operando de la **izquierda** no es igual al operando de la **derecha**, entonces, el resultado es ```True```. De lo contrario, es ```False```.
+
+Ejemplifiquemos este operador comparando directamente valores literales en lugar de variables.
+
+```{python}
+'Diego' != 'Alberto'
+```
+
+```{python}
+'Diego' != 'Diego'
+```
+
+Ahora evalúemos la igualdad entre dos cadenas aparentemente idénticas pero que difieren por el uso de mayúsculas.
+
+```{python}
+'Alberto' != 'alberto'
+```
+
+Python no considera igual el caracter ```A``` y la ```a```. Por lo tanto, las cadenas anteriores son diferentes. Nuevamente, es importante tener cuidado al realizar comparaciones que los operandos se encuentren en condiciones similares.
+
+También tomar en consideración que cualquier caracterer adicional, podría afectar nuestra comparación. Por ejemplo, veamos que si comparamos dos cadenas iguales pero colocamos un espacio adicional en una de ellas, entonces, los ```str``` se considerarían **no iguales**.
+
+```{python}
+'Diego' != 'Diego '
+```
+
+## Menor que
+
+Si el operador de la **izquierda** es menor que el de la **derecha**, entonces, el resultado es ```True```. De lo contrario, es ```False```.
+
+## Mayor que
+
+Si el operador de la **izquierda** es mayor que el de la **derecha**, entonces, el resultado es ```True```. De lo contrario, es ```False```.
+
+Para los siguientes ejemplos, definiremos variables que contienen la edad de tres personas.
+
+```{python}
+edad_1 = 7
+edad_2 = 16
+edad_3 = 33
+```
+
+Ahora, comparemos las edades de las personas. Primero, evaluamos si la edad de la persona 1 es menor yor que la edad de la persona 2.
+
+```{python}
+edad_1 < edad_2
+```
+
+Luego, evaluemos si la edad de la persona 3 es mayor que la de la persona 2.
+
+```{python}
+edad_3 > edad_2
+```
+
+## Menor o igual que
+Si el operador de la **izquierda** es menor o igual que el de la **derecha**, entonces, la condición es ```True```. De lo contrario, es ```False```.
+
+## Mayor o igual que
+Si el operador de la **izquierda** es mayor o igual que el de la **derecha**, entonces, la condición es ```True```. De lo contrario, es ```False```.
+
+A continuación, crearemos variables con notas de estudiantes.
+
+```{python}
+notaLuis = 5.9
+notaMaria = 7.8
+notaIsa = 6.0
+```
+
+Utilizaremos los operadores para evaluar si los estudiantes aprobaron el curso. Se sabe que la nota mínima debe ser de 6.0
+
+```{python}
+notaLuis >= 6.0
+```
+
+```{python}
+notaMaria>= 6.0
+```
+
+```{python}
+notaIsa>= 6.0
+```
+
+> ⚖️ Los comparadores anteriores se utilizan para realizar evaluar rangos de valores numéricos. No se recomienda su uso para comparar cadenas de caracteres.
+
+Veamos la siguiente comparación.
+
+```{python}
+'100' > '42'
+```
+
+Del ejemplo anterior, podemos observar que las comparaciones de números representados por ```str``` no funcionan de la misma forma que con valores numéricos en ```int``` o ```float```. Incluso podríamos intentar hacer comparaciones entre textos.
+
+```{python}
+'pequeño' > 'grande'
+```
+
+El resultado parece no tener ningún sentido lógico, sin embargo, Python no es capaz de reconocer que el significado de un ```str```. Realmente, al comparar cadenas de caracteres de esta manera lo que se realiza es una comparación lexicográfica. Es decir, se compara la representación numérica de cada caracter.
+
+Por ejemplo, el caracter ```a``` se representa por el valor decimal 97, mientras que el caracter ```b``` se representa por el valor decimal 98. Por eso al realizar la siguiente comparación obtendremos ```True```. Ya que es equivalente a comparar ```97 < 98```.
+
+```{python}
+'a' < 'b'
+```
+
+¿Qué sucede cuando tenemos una cadena con más de un caracter? En este caso, se realiza la misma comparación mencionada anteriormente pero, caracter por caracter, hasta encontrar un caracter distinto. Por eso, al comparar si ```caza``` es mayor a ```casa```, obtendremos ```True```.
+
+```{python}
+'caza' > 'casa'
+```

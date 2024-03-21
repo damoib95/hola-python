@@ -29,7 +29,9 @@ Al evaluar la igualdad entre ```a``` y ```b```, lo escribiríamos de la siguient
 a == b
 ```
 
-> Nótese que el resultado es el mismo si hubiéramos escrito los operandos al revés, es decir, ```b == a```.
+::: {.callout-note}
+Nótese que el resultado es el mismo si hubiéramos escrito los operandos al revés, es decir, ```b == a```.
+:::
 
 Si ahora evaluamos la igualdad entre ```a``` y ```c```, el resultado será ```False```.
 
@@ -46,7 +48,9 @@ d == a
 
 A simple vista, los valores de cada variable son idénticos. Sin embargo, Python no considera iguales los valores numéricos al compararse con un número representado como ```str```.
 
-> Importante asegurarse que al realizar comparaciones las condiciones de cada variable sean lo más similares posibles. Por ejemplo, el código anterior se podría comparar perfectamente si realizamos un _casting_ a entero: ```int(d)```
+::: {.callout-important}
+Importante asegurarse que al realizar comparaciones las condiciones de cada variable sean lo más similares posibles. Por ejemplo, el código anterior se podría comparar perfectamente si realizamos un _casting_ a entero: ```int(d)```
+:::
 
 ```{python}
 int(d) == a
@@ -136,7 +140,9 @@ notaMaria>= 6.0
 notaIsa>= 6.0
 ```
 
-> ⚖️ Los comparadores anteriores se utilizan para realizar evaluar rangos de valores numéricos. No se recomienda su uso para comparar cadenas de caracteres.
+::: {.callout-warning}
+Los comparadores anteriores se utilizan para realizar evaluar rangos de valores numéricos. No se recomienda su uso para comparar cadenas de caracteres.
+:::
 
 Veamos la siguiente comparación.
 
@@ -144,7 +150,9 @@ Veamos la siguiente comparación.
 '100' > '42'
 ```
 
-Del ejemplo anterior, podemos observar que las comparaciones de números representados por ```str``` no funcionan de la misma forma que con valores numéricos en ```int``` o ```float```. Incluso podríamos intentar hacer comparaciones entre textos.
+Del ejemplo anterior, podemos observar que las comparaciones de números representados por ```str``` no funcionan de la misma forma que con valores numéricos en ```int``` o ```float```.
+
+Incluso podríamos intentar hacer comparaciones entre textos. Por curiosidad, veamos qué sucede si comparamos cadenas de caracteres.
 
 ```{python}
 'pequeño' > 'grande'

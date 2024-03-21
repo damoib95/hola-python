@@ -10,15 +10,17 @@ x = 4
 ## Características
 
 Las variables poseen las siguientes características:
-1.   Puede almacenar distintos tipos de datos.
-2.   Su valor se puede modificar.
-3.   Se referencian por un nombre único (idealmente, significativo).
+
+1. Puede almacenar distintos tipos de datos.
+2. Su valor se puede modificar.
+3. Se referencian por un nombre único (idealmente, significativo).
 
 Observaciones sobre nombres de variables:
-1.   Python diferencia entre mayúsculas y minúsculas.
-2.   No pueden iniciar con números.
-3.   No pueden contener espacios.
-4.   No se pueden utilizar **palabras reservadas** (más adelante aprenderemos qué significan).
+
+1. Python diferencia entre mayúsculas y minúsculas.
+2. No pueden iniciar con números.
+3. No pueden contener espacios.
+4. No se pueden utilizar **palabras reservadas** (más adelante aprenderemos qué significan).
 
 ```{python}
 a = 100

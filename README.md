@@ -4,18 +4,21 @@ Bienvenido a mi curso de programación introductoria a Python.
 
 He creado este repositorio con el objetivo de compartir mis conocimientos con todo el mundo de la manera más efectiva posible.
 
-## Listado de Contenidos (TOC)
-1. Introducción 👏🏻
-2. Variables 📦
-3. Tipos de datos 🎹
-4. Operadores aritméticos 🧮
+## Tabla de Contenidos (TOC)
+1. Introducción
+2. Variables
+3. Tipos de datos
+4. Operadores aritméticos
+5. Operadores de asignación
+6. Operadores de comparación
+7. Operadores lógicos
 
 ---
 ## Notas
 
 ⚠️ El curso se encuentra en construcción, por lo que lo iré actualizando frecuentemente. 
 
-📹 El curso irá acompañado de vídeos explicativos sobre cada sección.
+📹 El curso irá acompañado de un curso con vídeos sobre cada sección.
 
 ✉️ Se aceptan comentarios, correcciones y recomendaciones para contribuir a la calidad del contenido.
 

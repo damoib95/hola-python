@@ -5,6 +5,7 @@ Bienvenido a mi curso de programación introductoria a Python.
 He creado este repositorio con el objetivo de compartir mis conocimientos con todo el mundo de la manera más efectiva posible.
 
 [Libro en PDF 📓 [Preliminar]](https://github.com/damoib95/hola-python/blob/main/libro/_book/¡Hola%2C-Python!.pdf)
+
 [Códigos de Jupyter Notebooks 🐍](https://github.com/damoib95/hola-python/tree/main/codigos)
 
 ## Tabla de Contenidos (TOC)

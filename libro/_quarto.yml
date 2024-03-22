@@ -13,6 +13,7 @@ book:
     - 04_op_arit.qmd
     - 05_op_asig.qmd
     - 06_op_comp.qmd
+    - 07_op_logi.qmd
 
 bibliography: references.bib
 

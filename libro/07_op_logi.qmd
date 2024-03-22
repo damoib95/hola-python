@@ -1,0 +1,127 @@
+# Operadores Lógicos
+
+Los operadores lógicos se utilizan para evaluar combinaciones lógicas. Generalmente, se utilizan en conjunto con los operadores de comparación para evaluar varias condiciones. Su funcionamiento es idéntico a las *Tablas de Verdad* que se suelen aprender en cursos de Matemáticas.
+
+Los operadores disponibles son:
+
+1. ```and```
+2. ```or```
+3. ```not```
+
+
+## and
+
+Si ambos operandos son ```True```, entonces, el resultado es ```True```. También se podría interpretar de la siguiente manera: si por lo menos uno de los operandos es ```False```, entonces, el resultado es ```False```. Corresponde al operador de **Conjunción**. Su tabla de verdad es la siguiente.
+
+| a     | b     |  a and b |
+|-------|-------|-----------|
+| False | False | False     |
+| False | True  | False     |
+| True  | False | False     |
+| True  | True  | True      |
+
+Iniciemos creando variables para representar la calificación de tres películas.
+
+```{python}
+the_dark_knight = 9.0
+interstellar = 8.7
+inception = 8.8
+```
+
+Si quisieramos evaluar si ```the_dark_knight``` tiene una puntuación mayor que las otras dos, se podría sugerir realizar la comparación de la siguiente manera lógica.
+
+```{python}
+the_dark_knight > interstellar > inception
+```
+
+Sin embargo, no obtendríamos el resultado esperado. En este caso, al concatenar el operador de comparación ```>```, Python evalúa que ```the_dark_knight``` sea mayor que ```interstellar```, y luego, que ```interstellar``` sea mayor que ```inception```. Por esta razón obtenemos ```False```.
+
+Por lo tanto, si lo que queremos evaluar realmente es si el valor de ```the_dark_knight``` es mayor a los otros dos, entonces, podríamos utilizar el operador ```and``` de la siguiente manera.
+
+```{python}
+the_dark_knight > interstellar and the_dark_knight > inception
+```
+
+A continuación, realizaremos las operaciones de la línea anterior de forma independiente para comprender cómo funciona realmente. Primero, se realizan las operaciones comparativas. Observamos que el resultado de cada comparación devuelve un resultado ```True```.
+
+```{python}
+the_dark_knight > interstellar
+```
+
+```{python}
+the_dark_knight > inception
+```
+
+Luego, se realiza la operación lógica. En este caso, realizaremos la operación ```and``` directamente con los valores que nos devolvieron las comparaciones anteriores.
+
+```{python}
+True and True
+```
+
+El resultado coincide con lo mostrado en la tabla de verdad para la conjunción.
+
+::: {.callout-caution}
+Nótese que es necesario realizar la comparación contra cada película de forma independiente. Un error bastante común consiste en realizar la operación de la siguiente manera, lo cual produciría un resultado incorrecto o carente de sentido lógico.
+:::
+
+```{python}
+the_dark_knight > interstellar and inception
+```
+
+En la expresión anterior, se inicia realizando la comparación.
+
+```{python}
+the_dark_knight > interstellar
+```
+
+Pero luego, al evaluar el operador lógico, realmente se está realizando la siguiente expresión.
+
+```{python}
+True and inception
+```
+
+::: {.callout-note}
+Utilizando el operador ```and``` se pueden añadir tantas comparaciones como sea necesario, por ejemplo, si necesitaramos comparar contra más de dos películas. Lo importante es tener presente que el resultado será ```True``` sí y solo sí **todos** los operandos son ```True```.
+:::
+
+```{python}
+the_prestige = 8.5
+
+(the_dark_knight > interstellar
+and the_dark_knight > inception
+and the_dark_knight > the_prestige)
+```
+
+::: {.callout-note}
+Si se requiere separar un código de Python en múltiples líneas, se puede encerrar la expresión completa dentro de paréntesis ```()```.
+:::
+
+## or
+Si uno de los operandos es **True**, entonces, la condición se vuelve **True**.
+
+```{python}
+telefono1 = "Apple"
+telefono2 = "Samsung"
+
+favorito1 = "Apple"
+favorito2 = "Huawei"
+
+print("El teléfono 1 me interesa:")
+print(telefono1 == favorito1 or telefono1 == favorito2)
+```
+
+```{python}
+print("El teléfono 2 me interesa:")
+print(telefono2 == favorito1 or telefono2 == favorito2)
+```
+
+## not
+
+Invierte el valor lógico del operando.
+
+```{python}
+ocupado = True
+print("El usuario está disponible: ")
+print(not ocupado)
+```
+

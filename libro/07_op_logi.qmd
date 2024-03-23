@@ -97,22 +97,56 @@ Si se requiere separar un código de Python en múltiples líneas, se puede ence
 :::
 
 ## or
-Si uno de los operandos es **True**, entonces, la condición se vuelve **True**.
+
+Si al menos uno de los operandos es ```True```, entonces, el resultado es ```True```. En este caso, el resultado será ```False```únicamente cuando todos los operandos sean ```False```. Su tabla de verdad corresponde al operador de Disyunción.
+
+| a     | b     |  a or b |
+|-------|-------|-----------|
+| False | False | False     |
+| False | True  | True     |
+| True  | False | True     |
+| True  | True  | True      |
+
+Crearemos la siguiente variables para comprender su funcionamiento. Asumamos que una tienda tiene una promoción especial del 20% de descuento si el cliente realiza el pago con una tarjeta de crédito a 6 o 12 cuotas.
 
 ```{python}
-telefono1 = "Apple"
-telefono2 = "Samsung"
+numCuotas = 6
+```
 
-favorito1 = "Apple"
-favorito2 = "Huawei"
+Entonces, podríamos utilizar el operador ```or``` para evaluar si la cantidad de cuotas seleccionada por el cliente, ```numCuotas```, coincide con el valor 6 o 12.
 
-print("El teléfono 1 me interesa:")
-print(telefono1 == favorito1 or telefono1 == favorito2)
+```{python}
+numCuotas == 6 or numCuotas == 12
+```
+
+Al evaluar la expresión, obtenemos el resultado de ```True``` debido a que la primera comparación es verdadera. Al igual que la subsección anterior, analicemos cómo es evaluada la expresión anterior en pasos.
+
+Primero, se realizan las operaciones de comparación.
+```{python}
+numCuotas == 6
 ```
 
 ```{python}
-print("El teléfono 2 me interesa:")
-print(telefono2 == favorito1 or telefono2 == favorito2)
+numCuotas == 12
+```
+
+Luego, se toman los resultados de cada comparación y se evalúa el operador lógico.
+
+```{python}
+True or False
+```
+
+El resultado coincide con la tabla de verdad para disyunción.
+
+::: {.callout-note}
+Al igual que el operador ```and```, es posible anidar más comparaciones en una misma expresión. Por ejemplo, podríamos ampliar la promoción a 18 y 24 cuotas.
+:::
+
+```{python}
+(numCuotas == 6
+ or numCuotas == 12
+ or numCuotas == 18
+ or numCuotas == 24)
 ```
 
 ## not

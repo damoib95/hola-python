@@ -151,11 +151,114 @@ Al igual que el operador ```and```, es posible anidar más comparaciones en una 
 
 ## not
 
-Invierte el valor lógico del operando.
+El operador ```not``` invierte el valor lógico del operando. Si el operando es ```True```, entonces, el resultado es ```False```. Y si el operando es ```False```, entonces, el resultado será ```True```. Corresponde a la tabla de la negación.
+
+| a     | not a |
+|-------|-------|
+| False | True |
+| True | False  |
+
+Inicialmente, podría parecer que este operador no tiene ninguna utilidad ya que simplemente invierte el valor de un operando. Sin embargo, en ciertas ocasiones podría resultar conveniente utilizarlo, especialmente, para hacer más clara (y natural) una expresión.
+
+A continuación, supongamos que tenemos las siguientes variables que indican si una persona si se encuentra en línea y si está ocupada.
 
 ```{python}
-ocupado = True
-print("El usuario está disponible: ")
-print(not ocupado)
+enLinea = True
+ocupada = False
 ```
 
+Para determinar si la persona se encuentra disponible para contactarla, podríamos escribir la siguiente expresión. Si su resultado es ```True```, entonces, contactamos a la persona, si es ```False```, entonces, no.
+
+```{python}
+enLinea and not ocupada
+```
+
+La línea de código se lee con bastante naturalidad: la contactaré si "está en línea y no está ocupada". Claramente, se ve más legible a que hubiéramos utilizado una línea como la siguiente.
+
+```{python}
+enLinea==True and ocupada==False
+```
+
+:::: {.callout-tip}
+Aunque la expresión ```enLinea==True``` es correcta, nótese que daría el mismo resultado que simplemente escribir el nombre de la variable ya que si su valor fuera ```True```, el resultado sería equivalente a ```True===True```, que daría ```True```. Si el valor de la variable fuera ```False```, entonces, se evalúa ```False==True```, dando como resultado ```False```. En conclusión, se obtendría siempre el mismo valor de la variable original.
+:::
+
+## Precedencia
+
+Es bastante común utilizar una combinación de operadores lógicos en una misma expresión. Tomar en consideración que los operadores presentan el siguiente orden de precedencia:
+
+0. ```()```
+1. ```not```
+2. ```and```
+3. ```or```
+
+Por lo tanto, se debe tener especial cuidado al emplear distintos operadores lógicos en una misma línea para obtener el resultado deseado. Se recomienda el uso de paréntesis para indicar las operaciones iniciales, y también, para mejorar la claridad del código.
+
+Finalmente, realicemos un ejemplo en el que evalúemos una expresión más compleja. Iniciaremos definiendo las siguientes variables sobre condiciones climáticas.
+
+```{python}
+llueve = False
+estado = 'nublado'
+temperatura = 20
+```
+
+Crearemos una expresión que nos ayudará a decidir si es un momento conveniente para salir a caminar. Iniciemos definiendo cuáles serían las condiciones favorables utilizando lenguaje común: saldré a caminar si no llueve y si el estado del clima es nublado o soleado con una temperatura menor a los 24 grados Celcius.
+
+```{python}
+not llueve and estado=='nublado' or estado=='soleado' and temperatura<24
+```
+
+La expresión anterior podría funcionar correctamente para algunos casos, sin embargo, si evalúamos el siguiente escenario veremos que el resultado no es el esperado.
+
+```{python}
+llueve = True
+estado = 'soleado'
+temperatura = 18
+
+not llueve and estado=='nublado' or estado=='soleado' and temperatura<24
+```
+
+El código nos indica que podemos salir, sin embargo, nos interesa que el programa indique ```False``` cuando haya lluvia. Antes de mostrar una posible solución al problema, veamos cómo evalúa Python la expresión planteada y descubramos por qué no funciona en este caso.
+
+Iniciamos reemplazando cada variable con su valor correspondiente.
+
+```{python}
+#| eval: false
+not True and 'soleado'=='nublado' or 'soleado'=='soleado' and 18<24
+```
+
+Evalúemos los operadores de comparación para obtener los resultados ```bool```.
+
+```{python}
+#| eval: false
+not True and False or True and True
+```
+
+Respetando el orden de precedencia de los operadores lógicos. Iniciamos evaluando el ```not```.
+
+```{python}
+#| eval: false
+False and False or True and True
+```
+
+Continúamos evaluando el operador ```and```.
+
+```{python}
+#| eval: false
+False or True
+```
+
+Finalizamos evaluando el operador ```or````.
+
+```{python}
+#| eval: false
+True
+```
+
+Ahora vemos que el orden de precedencia ha afectado el funcionamiento de nuestro código. En este caso, se sugiere colocar paréntesis ```()``` para indicar el orden en el que nos interesa realizar las operaciones lógicas.
+
+```{python}
+not llueve and (estado=='nublado' or (estado=='soleado' and temperatura<24))
+```
+
+De esta manera, se ha solucionado el error presentado anteriormente. Además, hemos mejorado la legibilidad de nuestro código significativamente, ahora se puede distingir claramente cuáles son las condiciones que se deben cumplir para salir a caminar.

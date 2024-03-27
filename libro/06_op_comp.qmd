@@ -166,8 +166,16 @@ Por ejemplo, el caracter ```a``` se representa por el valor decimal 97, mientras
 'a' < 'b'
 ```
 
-¿Qué sucede cuando tenemos una cadena con más de un caracter? En este caso, se realiza la misma comparación mencionada anteriormente pero, caracter por caracter, hasta encontrar un caracter distinto. Por eso, al comparar si ```caza``` es mayor a ```casa```, obtendremos ```True```.
+¿Qué sucede cuando tenemos una cadena con más de un caracter? En este caso, se realiza la misma comparación mencionada anteriormente pero, caracter por caracter, hasta encontrar un caracter distinto que se pueda evaluar. Por eso al comparar si ```chow chow``` es mayor a ```chihuahua``` obtendremos ```True```, ya que ```o``` (111) es mayor a ```i``` (105).
 
 ```{python}
-'caza' > 'casa'
+ 'chow chow' > 'chihuahua'
 ```
+
+:::: {.callout-warning}
+En general, no se suelen realizar comparaciones de rangos para ```str``` y se sugiere utilizarlos exclusivamente para valores numéricos.
+:::
+
+::: {.callout-note}
+El ejemplo anterior no demuestra que Chow chow sea superior a Chihuahua. El procesador se limita a ejecutar instrucciones ariméticas y lógicas, no tiene conocimientos sobre razas caninas.
+:::

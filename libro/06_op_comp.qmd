@@ -158,7 +158,7 @@ Incluso podríamos intentar hacer comparaciones entre textos. Por curiosidad, ve
 'pequeño' > 'grande'
 ```
 
-El resultado parece no tener ningún sentido lógico, sin embargo, Python no es capaz de reconocer que el significado de un ```str```. Realmente, al comparar cadenas de caracteres de esta manera lo que se realiza es una comparación lexicográfica. Es decir, se compara la representación numérica de cada caracter.
+El resultado parece no tener ningún sentido lógico, sin embargo, Python no es capaz de reconocer el significado de un ```str```. Realmente, al comparar cadenas de caracteres de esta manera lo que se realiza es una comparación lexicográfica. Es decir, se compara la representación numérica de cada caracter.
 
 Por ejemplo, el caracter ```a``` se representa por el valor decimal 97, mientras que el caracter ```b``` se representa por el valor decimal 98. Por eso al realizar la siguiente comparación obtendremos ```True```. Ya que es equivalente a comparar ```97 < 98```.
 

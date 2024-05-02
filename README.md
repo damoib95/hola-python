@@ -16,6 +16,7 @@ He creado este repositorio con el objetivo de compartir mis conocimientos con to
 5. Operadores de asignación
 6. Operadores de comparación
 7. Operadores lógicos
+8. Sentencias condicionales
 
 ---
 ## Notas

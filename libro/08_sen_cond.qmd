@@ -1,0 +1,195 @@
+# Sentencias condicionales
+
+Las sentencias condicionales modifican la ejecución del programa. Se utilizan para automatizar la toma de decisiones.
+
+En Python, podemos utilizar las siguientes sentencias condicionales:
+
+* if
+* elif
+* else
+
+
+## if
+Si la condición es ```True```, entonces, se ejecuta el bloqu de código con indentación siguiente. Si la condición es ```False```, entonces, salta el bloque de código con indentación y continúa la ejecución del programa.
+
+La palabra ```if``` se utiliza para iniciar una o más sentencias condicionales (que veremos a continuación).
+
+Por ejemplo, definimos ```monto``` para almacenar el valor de un producto y ```aplicarDescuento``` para especificar si se aplicará el descuento o no. Luego, colocamos la palabra ```if``` seguida por la variable ```aplicarDescuento```. Si la expresión es ```True```, entonces, se ejecutará el bloque de código conformado por las tres líneas indentadas (con espacios). Si la expresión resulta ser ```False```, entonces, el programa se saltará las líneas con indentación y continuará con el resto del código.
+
+Asignemos un valor ```False```a la variable ```aplicarDescuento```  y veamos qué se sucede.
+
+```{python}
+monto = 50.0
+aplicarDescuento = False
+
+if aplicarDescuento:
+  descuento = 0.2*monto
+  monto = monto - descuento
+  print(f'Descuento: Q{descuento}')
+print(f'Monto a cancelar: Q{monto}')
+```
+
+En este caso, al evaluar la sentencia condicional se obtiene ```False```, por lo tanto, el código con indentación siguiente **no es ejecutado** y se ejecuta el código siguiente que ya no se encuentra indentado. Por ello, solamente se imprime el monto a cancelar. Nótese que la variable ```monto``` mantiene el valor original asignado en la primera línea del programa.
+
+Ahora modifiquemos el valor de ```aplicarDescuento``` a ```True```.
+
+```{python}
+monto = 50.0
+aplicarDescuento = True
+
+if aplicarDescuento:
+  descuento = 0.2*monto
+  monto = monto - descuento
+  print(f'Descuento: Q{descuento}')
+print(f'Monto a cancelar: Q{monto}')
+```
+
+En este caso, al evaluar la sentencia condicional se obtiene ```True```, por lo tanto, se ejecuta el bloque de código siguiente con indentación. Es decir, se ejecutan las tres líneas de código en las cuales se crea la variable ```descuento```, se modifica el ```monto``` y se imprime el descuento aplicado. Al concluir el código dentro de la condicional, se continúa con la ejecución normal del programa. Por ello, al igual que el caso anterior, siempre se imprime el monto a cancelar al final.
+
+## elif
+
+Si la condición anterior no se cumple, entonces, se evalúa esta condición (de la misma forma que **if**).
+
+Se pueden utilizar todos los **elif** que sean necesarios para evaluar diversas condiciones.
+
+Tomar en consideración que antes del primer **elif** debe haber un **if**.
+
+```{python}
+notaFinal = 50
+notaMinima = 60
+if notaFinal >= notaMinima:
+  print("Has aprobado el curso con una nota de", notaFinal)
+  print("¡Felicidades!")
+elif notaFinal < notaMinima:
+  print("Has reprobado el curso con una nota de", notaFinal)
+  print("La nota mínima para aprobar el curso es de", notaMinima)
+
+print("Fin")
+```
+
+## else
+Si ninguna de las condiciones anteriores se cumple, entonces, se ejecuta el código dentro del **else**.
+
+Es la única sentencia que **no requiere de una condición para evaluar**.
+
+```{python}
+edadJohn = 18
+edadIsa = 18
+
+if edadJohn > edadIsa:
+  print("John es mayor a Isa")
+elif edadJohn < edadIsa:
+  print("Isa es mayor a John")
+else:
+  print("Ambos tienen la misma edad")
+```
+
+## Flujo de control
+
+A continuación se muestran algunos ejemplos de la utilización de las sentencias condicionales para comprender cómo afecta la ejecución del programa.
+
+### Ejemplo 1
+
+En este ejemplo evalúamos si un número es par o impar. Veremos que podemos emplear **if** y **else** sin necesidad de colocar un **elif**.
+
+```{python}
+num = 7
+
+if num%2 == 0:
+  print(num, "es par")
+else:
+  print(num, "es impar")
+```
+
+### Ejemplo 2
+
+El siguiente código, evalúa el índice de masa corporal de una persona e imprime un mensaje dependiendo del resultado.
+
+```{python}
+pesoKg = 100
+alturaM = 1.7
+
+imc = pesoKg/alturaM**2
+imc = round(imc, 2)
+print("Su resultado de IMC es", imc)
+
+if imc < 15:
+  print("Bajo peso")
+elif imc < 25:
+  print("Peso normal")
+elif imc < 30:
+  print("Sobrepeso")
+else:
+  print("Obesidad")
+
+print("Fin")
+```
+
+El siguiente código no utiliza adecuadamente las sentencias condicionales.
+
+```{python}
+pesoKg = 40
+alturaM = 1.7
+
+imc = pesoKg/alturaM**2
+imc = round(imc, 2)
+print("Su resultado de IMC es", imc)
+
+if imc < 15:
+  print("Bajo peso")
+if imc < 25:
+  print("Peso normal")
+if imc < 30:
+  print("Sobrepeso")
+else:
+  print("Obesidad")
+
+print("Fin")
+```
+
+### Ejemplo 3
+
+En el siguiente ejemplo, se emplean operadores de comparación en conjunto con operadores lógicos. Esto nos permite unir más de una expresión dentro de la misma condición.
+
+```{python}
+print("¿Cuál es tu año de nacimiento? ")
+birthDate = 1995
+
+if birthDate>=1944 and birthDate<=1964:
+  generation = "Baby Boomer"
+elif birthDate>=1965 and birthDate<=1979:
+  generation = "X"
+elif birthDate>=1980 and birthDate<=1994:
+  generation = "Y o millennial"
+elif birthDate>=1995 and birthDate<=2015:
+  generation = "Z"
+else:
+  generation = "Desconocida"
+
+print("Perteneces a la generación", generation)
+```
+
+## Método abreviado para if-else
+
+Existe una forma de abreviar códigos sencillos en los cuales se utiliza if-else y solamente poseen una línea de indentación.
+
+Por ejemplo, si tenemos el siguiente programa que evalúa si un cliente debe obtener una pizza gratis o no.
+
+La condición es que si la pizza fue entregada un tiempo mayor a 30 minutos, entonces la pizza es gratis. De lo contrario, se indica el monto a cancelar.
+
+```{python}
+entrega = 18
+
+if entrega <= 30:
+  print("Total: Q99")
+else:
+  print("Gratis")
+```
+
+El código de las sentencias condicionales se puede resumir en una sola línea, cambiando el orden de la siguiente forma:
+
+```{python}
+entrega = 45
+
+print("Total: Q99" if entrega <= 30 else "Gratis")
+```

@@ -4,7 +4,7 @@ project:
 book:
   title: "¡Hola, Python!"
   author: "Diego Morales"
-  date: "01/05/2024"
+  date: "02/05/2024"
   chapters:
     - index.qmd
     - 01_intro.qmd

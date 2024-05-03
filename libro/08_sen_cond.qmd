@@ -10,9 +10,19 @@ En Python, podemos utilizar las siguientes sentencias condicionales:
 
 
 ## if
-Si la condición es ```True```, entonces, se ejecuta el bloqu de código con indentación siguiente. Si la condición es ```False```, entonces, salta el bloque de código con indentación y continúa la ejecución del programa.
 
-La palabra ```if``` se utiliza para iniciar una o más sentencias condicionales (que veremos a continuación).
+Si la condición es ```True```, entonces, se ejecuta el bloque de código con indentación siguiente. Si la condición es ```False```, entonces, salta el bloque de código con indentación y continúa la ejecución del programa.
+
+La palabra ```if``` se utiliza para iniciar una o más sentencias condicionales (que veremos más adelante).
+
+```
+if expresion:
+  codigo
+```
+
+En lenguaje humano, esta sentencia se leería de la siguiente manera: "Si la expresión es verdadera, entonces, ejecutar código"
+
+### Ejemplo
 
 Por ejemplo, definimos ```monto``` para almacenar el valor de un producto y ```aplicarDescuento``` para especificar si se aplicará el descuento o no. Luego, colocamos la palabra ```if``` seguida por la variable ```aplicarDescuento```. Si la expresión es ```True```, entonces, se ejecutará el bloque de código conformado por las tres líneas indentadas (con espacios). Si la expresión resulta ser ```False```, entonces, el programa se saltará las líneas con indentación y continuará con el resto del código.
 
@@ -44,28 +54,64 @@ if aplicarDescuento:
 print(f'Monto a cancelar: Q{monto}')
 ```
 
-En este caso, al evaluar la sentencia condicional se obtiene ```True```, por lo tanto, se ejecuta el bloque de código siguiente con indentación. Es decir, se ejecutan las tres líneas de código en las cuales se crea la variable ```descuento```, se modifica el ```monto``` y se imprime el descuento aplicado. Al concluir el código dentro de la condicional, se continúa con la ejecución normal del programa. Por ello, al igual que el caso anterior, siempre se imprime el monto a cancelar al final.
+Ahora, al evaluar la sentencia condicional se obtiene ```True```, por lo tanto, se ejecuta el bloque de código siguiente con indentación. Es decir, se ejecutan las tres líneas de código en las cuales se crea la variable ```descuento```, se modifica el ```monto``` y se imprime el descuento aplicado. Al concluir el código dentro de la condicional, se continúa con la ejecución normal del programa. Por ello, al igual que el caso anterior, siempre se imprime el monto a cancelar al final.
 
 ## elif
 
-Si la condición anterior no se cumple, entonces, se evalúa esta condición (de la misma forma que **if**).
+Si la sentencia anterior (```if``` o ```elif```) no se cumple, entonces, se evalúa esta sentencia.
 
-Se pueden utilizar todos los **elif** que sean necesarios para evaluar diversas condiciones.
+En una serie de sentencias, se puede agregar uno o múltiples ```elif``` para evaluar diversas condiciones.
 
-Tomar en consideración que antes del primer **elif** debe haber un **if**.
+::: {.callout-note}
+Una serie de sentencias siempre inicia por ```if```. Por lo tanto, no se podría utilizar ```elif``` de forma independiente.
+:::
+
+```
+if expresion1:
+  codigo1
+elif expresion2:
+  codigo2
+elif expresion3:
+  codigo3
+```
+
+En lenguaje humano, esta sentencia se leería: "Si la expresión 1 es verdadera, entonces, ejecutar código 1. Sino, si la expresión 2 es verdaera, entonces, ejecutar código 2. Sino, si la expresión 3 es verdadera, entonces, ejecutar código 3". Y podríamos continuar así, sucesivamente, con todas las expresiones necesarias.
+
+### Ejemplo
+
+El siguiente ejemplo, crearemos un programa para determinar si un estudiante ha aprobado un curso. La nota mínima para aprobar es de 60 puntos, por lo tanto, si la nota del estudiante es mayor o igual o 60, entonces, aprueba, sino, reprueba.
+
+Iniciemos asignando un valor de 90 a la nota del estudiante y ejecutemos el programa.
 
 ```{python}
-notaFinal = 50
+notaEstudiante = 90
 notaMinima = 60
-if notaFinal >= notaMinima:
-  print("Has aprobado el curso con una nota de", notaFinal)
-  print("¡Felicidades!")
-elif notaFinal < notaMinima:
-  print("Has reprobado el curso con una nota de", notaFinal)
-  print("La nota mínima para aprobar el curso es de", notaMinima)
 
-print("Fin")
+if notaEstudiante >= notaMinima:
+  print(f'Has aprobado el curso con una nota de {notaEstudiante}')
+  print('¡Felicidades!')
+elif notaEstudiante < notaMinima:
+  print(f'Has reprobado el curso con una nota de {notaEstudiante}')
+print('Gracias por utilizar el programa')
 ```
+
+Como es de esperarse, se muestra que el estudiate ha aprobado el curso. Analicemos paso a paso la ejecución del programa para comprender el "flujo de ejecución". Primero, se asignan valores a las variables ```notaEstudiante``` y ```notaMinima```. Luego, se evalúa si nota del estudiante es mayor o igual a la nota mínima. Debido a que esta expresión es verdadera, entonces, se ejecuta el código con indentación siguiente. Finalmente, como la condición del ```if``` se cumplió, entonces, el programa **no** evalúa las siguientes sentencias sino que se mueve hasta el final de las sentencias para continuar con la ejecución del resto del código.
+
+Ahora, modifiquemos la nota del estudiante para que aparezca como reprobado. 
+
+```{python}
+notaEstudiante = 55
+notaMinima = 60
+
+if notaEstudiante >= notaMinima:
+  print(f'Has aprobado el curso con una nota de {notaEstudiante}')
+  print('¡Felicidades!')
+elif notaEstudiante < notaMinima:
+  print(f'Has reprobado el curso con una nota de {notaEstudiante}')
+print('Gracias por utilizar el programa')
+```
+
+El código inicia evalúando si la nota del estudiante es mayor o igual a la nota mínima. Ahora la expresión es falsa, por lo tanto, no ejecuta el bloque de código siguiente sino que se dirige a la siguiente sentencia condicional. Ahora en el ```elif```  evalúa si la nota del estudiante es menor a la nota mínima. Debido a que la expresión es verdadera, entonces, se ejecuta la línea de código siguiente indicando que se ha reprobado el curso. Finalmente, se imprime el mensaje de despedida, continuando con la ejecución del resto del programa.
 
 ## else
 Si ninguna de las condiciones anteriores se cumple, entonces, se ejecuta el código dentro del **else**.

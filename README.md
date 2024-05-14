@@ -1,6 +1,6 @@
 # ¡Hola, Python!
 
-Bienvenido a mi curso de programación introductoria a Python.
+Bienvenid@ a mi curso de introducción a programación en Python.
 
 He creado este repositorio con el objetivo de compartir mis conocimientos con todo el mundo de la manera más efectiva posible.
 

@@ -1,12 +1,6 @@
----
-jupyter: python3
----
-
-*Diego Morales - 20 de abril de 2020*
-
 # Clases y objetos
 
-![whos_that_pokemon.jpg](attachment:whos_that_pokemon.jpg)
+![¿Quién es ese Pokémon?](whos_that_pokemon.png)
 
 ### Atributos (características)
 1. Tipo
@@ -21,7 +15,7 @@ jupyter: python3
 3. Aumentar de nivel
 4. Evolucionar
 
-![pokemon.jpg](attachment:pokemon.jpg)
+![Pokémon](pikachu.png)
 
 ## Clases
 Base (o plano) para crear objetos. Compuesta por atributos y métodos.

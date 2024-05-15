@@ -1,8 +1,4 @@
----
-title: Búcles
-jupyter: python3
----
-
+# Búcles
 
 Los búcles se utilizan para repetir la ejecución un conjunto de instrucciones (iteración).
 
@@ -46,7 +42,7 @@ Detiene la ejecución de un búcle, aunque la condición sea verdadera.
 #| colab: {base_uri: 'https://localhost:8080/', height: 139}
 acceso = False #flag
 while acceso == False:
-  ingreso = input("Código de acceso: ")
+  ingreso = "5426" #input("Código de acceso: ")
   if ingreso == "5426":
     print("Acceso concedido.")
     acceso = True
@@ -59,7 +55,7 @@ print("Ingresando al sistema.")
 ```{python}
 #| colab: {base_uri: 'https://localhost:8080/', height: 139}
 while True:
-  ingreso = input("Código de acceso: ")
+  ingreso = "5426" #input("Código de acceso: ")
   if ingreso == "5426":
     print("Acceso concedido.")
     break
@@ -100,7 +96,6 @@ print(result)
 A continuación, crearemos un juego sencillo en el cual seleccionaremos un número al azar y el usuario deberá adivinar cuál es el número.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 572}
 import random
 
 number = random.randint(1,9)
@@ -110,7 +105,8 @@ print("Welcome to Guess a Number")
 while guess != number:
   print("\nChoose a number from 1 to 9: ")
   print("Write -1 if you want to exit.")
-  guess = int(input())
+  #guess = int(input())
+  print(f"{guess=}")
   if guess==-1:
     break
   if guess>9:
@@ -118,8 +114,10 @@ while guess != number:
     continue
   if guess==number:
     print("Congratulations!")
+    break
   else:
     print("Try again.")
+    guess += 1
 print("Thank you for playing")
 ```
 
@@ -154,8 +152,6 @@ Utiliza la siguiente sintaxis.
 ```
 range(inicio, final, paso)
 ```
-
-
 
 ```{python}
 #| colab: {base_uri: 'https://localhost:8080/', height: 191}
@@ -211,12 +207,11 @@ print(chr(68))
 El siguiente código utiliza un búcle *for* para codificar un texto a partir de una llave *k*.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 texto = "Me gusta programar"
 k = 3
 cifrado = ""
 for letra in texto:
-    x = ord(c)
+    x = ord(letra)
     x = x + k
     c2 = chr(x)
     cifrado += c2
@@ -226,7 +221,6 @@ print(cifrado)
 El siguiente realiza el procedimiento inverso. En este caso, se ingresa un texto cifrado y se decodifica a partir de la llave correcta.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 cifrado = 'Ph#jxvwd#surjudpdu'
 k = 3
 decodificacion= ""

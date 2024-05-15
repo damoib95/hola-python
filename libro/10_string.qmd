@@ -1,19 +1,12 @@
----
-title: String
-jupyter: python3
----
-
+# String
 
 Un string es una cadena o secuencia de caracteres (letras, números o símbolos).
-
-
 
 ## Inicialización
 
 Para crear un string, simplemente colocamos la cadena de caracteres dentro de comillas simples o dobles.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 saludo = '¡Bienvenido a mi programa! _versión 2.1_'
 print(saludo)
 ```
@@ -21,7 +14,6 @@ print(saludo)
 También podemos utilizar la función **str()** para convertir cualquier tipo de dato a string.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 52}
 usuario = 27
 print(type(usuario))
 usuario = str(usuario)
@@ -33,7 +25,6 @@ print(type(usuario))
 Podemos unir dos strings utilizando el símbolo **+**. Asegurarse que ambos valores sean de tipo *str*.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 message = "Your name is "
 name = "Diego"
 text = message+name
@@ -41,7 +32,6 @@ print(text)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 a = "El precio es de: "
 b = 19.99
 c = a+str(b)
@@ -53,7 +43,6 @@ print(c)
 Podemos determinar el tamaño del string, es decir, el número de caracteres utilizando la función **len()**.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 ciudad = "Guatemala"
 longitud = len(ciudad)
 print(longitud)
@@ -76,18 +65,15 @@ Por ejemplo, si tenemos un string "python", estos serían los índices de cada c
 p | y | t | h | o | n
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 x = "python 3"
 print(x)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 print(x[0])
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 print(x[-1])
 ```
 
@@ -106,19 +92,16 @@ Por ejemplo, si tenemos el siguiente string.
 D | i | e | g | o |  | M | o | r | a | l | e | s
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 nombreCompleto = "Diego Morales"
 print(nombreCompleto)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 nombre = nombreCompleto[:5]
 print(nombre)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 apellido = nombreCompleto[6:]
 print(apellido)
 ```
@@ -131,29 +114,24 @@ Documentación de Python: [String Methods](https://docs.python.org/3/library/std
 
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 date = "   FECHA: 1 de enero de 1970 "
 print(date)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 date = date.strip()
 print(date)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 "enero" == "Enero".lower()
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
-,print(date.upper())
+print(date.upper())
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 print(date.lower())
 ```
 
@@ -165,27 +143,22 @@ print(year.isnumeric())
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 print("enero" in date)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 print(date.find("enero"))
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 print(date.find("marzo"))
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 print(date.replace("enero","febrero"))
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 52}
 elementos = date.split()
 print(elementos)
 print(elementos[3])
@@ -195,37 +168,31 @@ print(elementos[3])
 Recibe un string con información sobre una dirección de correo electrónico. Se le solicita extraer el correo y luego extraer el usuario del mismo.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 mensaje = "Correo de: diego.morales@ameritec.edu.gt  "
 print(mensaje)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 start = mensaje.find(":")
 print(start)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 correo = mensaje[start+1:]
 print(correo)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 correo = correo.strip()
 print(correo)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 partes = correo.split("@")
 print(partes)
 ```
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 usuario = partes[0]
 print(usuario)
 ```
@@ -237,7 +204,6 @@ En Python 3 podemos utilizar un formato para los string que mezclan caracteres c
 Se debe inicializar el string escribiendo  una *f* y especificar dentro de llaves las variables *{ }*.
 
 ```{python}
-#| colab: {base_uri: 'https://localhost:8080/', height: 35}
 estudiante = "Diego"
 actividad = 3
 nota = 100.0

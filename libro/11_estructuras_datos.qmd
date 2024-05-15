@@ -1,8 +1,4 @@
----
-title: Estructuras de Datos
-jupyter: python3
----
-
+# Estructuras de Datos
 
 Permiten organizar, manipular y almacenar objetos relacionados para que se pueda trabajar con ellos de forma eficiente. Se emplea una única variable para almacenar varios objetos.
 
@@ -425,7 +421,7 @@ print(tel.keys())
 print(tel.values())
 ```
 
-## Indexación
+### Indexación
 
 Para acceder a elementos de un diccionario se utiliza el operador de indexación y se especifica el identificar o *key* [index].
 

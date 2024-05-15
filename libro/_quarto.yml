@@ -4,7 +4,7 @@ project:
 book:
   title: "¡Hola, Python!"
   author: "Diego Morales"
-  date: "02/05/2024"
+  date: "05/15/2024"
   chapters:
     - index.qmd
     - 01_intro.qmd
@@ -15,6 +15,11 @@ book:
     - 06_op_comp.qmd
     - 07_op_logi.qmd
     - 08_sen_cond.qmd
+    - 09_bucles.qmd
+    - 10_string.qmd
+    - 11_estructuras_datos.qmd
+    - 12_funciones.qmd
+    - 13_clases_objetos.qmd
 
 bibliography: references.bib
 

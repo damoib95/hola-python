@@ -23,7 +23,7 @@ He creado este repositorio con el objetivo de compartir mis conocimientos con to
 10. String
 11. Estructuras de Datos
 12. Funciones
-13. Programación Orientada a Objetos
+13. Clases y Objetos
 ---
 ## Notas
 

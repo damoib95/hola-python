@@ -20,9 +20,10 @@ He creado este repositorio con el objetivo de compartir mis conocimientos con to
 7. Operadores lógicos
 8. Sentencias condicionales
 9. Búcles
-10. Estructuras de Datos
-11. Funciones
-12. Programación Orientada a Objetos
+10. String
+11. Estructuras de Datos
+12. Funciones
+13. Programación Orientada a Objetos
 ---
 ## Notas
 

@@ -1,0 +1,591 @@
+---
+title: Estructuras de Datos
+jupyter: python3
+---
+
+
+Permiten organizar, manipular y almacenar objetos relacionados para que se pueda trabajar con ellos de forma eficiente. Se emplea una única variable para almacenar varios objetos.
+
+
+Existen las siguientes estructuras de datos en Python:
+
+* Listas (List)
+* Tuplas (Tuples)
+* Conjuntos (Set)
+* Diccionarios (Dictionaries)
+
+
+
+
+## Intuición sobre Listas
+
+Imagine que se le entrega la siguiente lista de compras.
+
+|Índice|Frutas|
+|---|---|
+|0|Manzana|
+|1|Banano|
+|2|Naranja|
+|3|Mango|
+
+Cuando usted llega al supermercado, se da cuenta de que las naranjas están agotadas, pero sí hay mandarinas. Entonces, usted se dirige al indice 2, y escribe *Mandarina* en su lugar.
+
+|Índice|Frutas|
+|---|---|
+|0|Manzana|
+|1|Banano|
+|2|Mandarina|
+|3|Mango|
+
+Luego de recoger todos los artículos, se da cuenta de que esta semana el mango está muy caro y prefiere no comprarlo, así que lo borra de la lista.
+
+|Índice|Frutas|
+|---|---|
+|0|Manzana|
+|1|Banano|
+|2|Mandarina|
+
+Finalmente, cuando llega a la caja, le ofrecen pera y kiwi en oferta y usted decide agregarlos al listado y llevárselos. Su lista resultante, sería la siguiente:
+
+|Índice|Frutas|
+|---|---|
+|0|Manzana|
+|1|Banano|
+|2|Mandarina|
+|3|Pera|
+|4|Kiwi|
+
+Las listas en Python funcionan de forma similar, permitiendo agrupar artículos similares (frutas, en este caso) y permitiendo realizar modificaciones sobre ellas (cambiar, eliminar, agregar).
+
+## Listas
+
+* Permiten almacenar cualquier tipo de objeto (no necesariamente deben ser todos de la misma clase).
+* Son modificables (mutables).
+* Dinámicas
+
+### Creación de Listas
+
+Se emplea la siguiente sintaxis.
+
+```
+nombreLista = [elemento0, elemento1, elemento2, ...]
+```
+
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+frutas = ['manzana', 'pera', 'naranja', 'mora']
+print(frutas)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+notas = [90, 89.5, 92, 95.5]
+print(notas)
+```
+
+### Indexación
+
+Para acceder a elementos de listas se utiliza el operador de indexación y se especifica el índice del objeto [index].
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print(frutas[3])
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print(frutas[-1])
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print(frutas[1:3])
+```
+
+### Asignación
+
+Para asignar un nuevo valor a una posición de una lista, se especifica el elemento (o elementos) que se desean modificar accediendo a él y se le asigna su nuevo valor.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print(notas)
+```
+
+```{python}
+notas[2] = 100
+```
+
+```{python}
+notas[0:2] = [85, 87]
+```
+
+### Agregar y remover elementos
+
+Se pueden agregar elementos al final de una lista utilizando **append()** y se puede remover algún elemento en específico utilizando **remove()**. Dentro del paréntesis se coloca el objeto que se desea agregar o eliminar.
+
+**Observación**: Si se intenta remover un objeto que no está en la lista, se producirá un error.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print(frutas)
+```
+
+```{python}
+frutas.append("fresa")
+```
+
+```{python}
+frutas.remove("pera")
+```
+
+### Número de elementos
+
+Para obtener el número de elementos en una lista se utiliza el método **len()**.
+
+```{python}
+numeroFrutas = len(frutas)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print("La lista contiene",numeroFrutas,"frutas.")
+```
+
+### Existencia del elemento
+
+Para verificar si un elemento se encuentra dentro de una lista se utiliza in.
+
+El resultado será **True** si el elemento se encuentra en la lista y **False** de no ser así.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print("cereza" in frutas)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print("fresa" in frutas)
+```
+
+### Recorrer elementos
+
+Podemos emplear un búcle **for** para recorrer por los elementos de una lista.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 86}
+for x in notas:
+  print(x)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 86}
+for i in range(len(notas)):
+  print(i, frutas[i])
+```
+
+## Tuplas
+
+* Permiten almacenar cualquier tipo de objeto (no necesariamente deben ser todos de la misma clase).
+* No son modificables (inmutables).
+* Más rápidas que las listas.
+* Protección contra escritura.
+* Se suelen utilizar con diccionarios.
+
+Se emplea la siguiente sintaxis.
+
+```
+nombreTupla = (elemento0, elemento1, elemento2, ...)
+```
+
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+frutas = ('manzana', 'pera', 'naranja', 'mora')
+print(frutas)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+notas = (90, 89.5, 92, 95.5)
+print(notas)
+```
+
+### Indexación
+
+Para acceder a elementos de una tupla se utiliza el operador de indexación y se especifica el índice del objeto [index].
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print(frutas[3])
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print(frutas[-1])
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print(frutas[1:4])
+```
+
+### Número de elementos
+
+Para obtener el número de elementos en una tupla se utiliza el método **len()**.
+
+```{python}
+numeroFrutas = len(frutas)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print("La tupla contiene",numeroFrutas,"frutas.")
+```
+
+### Existencia del elemento
+
+Para verificar si un elemento se encuentra dentro de una tupla se utiliza **in**.
+
+El resultado será **True** si el elemento se encuentra en la tupla y **False** de no ser así.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print("cereza" in frutas)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+print("naranja" in frutas)
+```
+
+### Recorrer elementos
+
+Podemos emplear un búcle **for** para recorrer por los elementos de una tupla.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 86}
+for x in notas:
+  print(x)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 86}
+for i in range(len(notas)):
+  print(i, notas[i])
+```
+
+## Conjuntos
+
+* Permiten almacenar cualquier tipo de objeto.
+* Implementa operaciones de teoría de conjuntos.
+* No se puede acceder a los elementos.
+* No se pueden modificar los elementos existentes, pero sí se permite añadir y eliminar.
+* Los elementos no tienen un orden específico.
+* No se pueden repetir los elementos dentro del cojunto (son únicos).
+
+Se emplea la siguiente sintaxis.
+
+
+```
+nombreConjunto = {elementoA, elementoB, elementoC, ...}
+```
+
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+companies = {"Apple", "Google", "Facebook", "Amazon"}
+print(companies )
+```
+
+### Recorrer elementos
+
+Podemos emplear un búcle **for** para recorrer por los elementos de un conjunto.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 87}
+for c in companies:
+  print(c)
+```
+
+### Existencia del elemento
+
+Para verificar si un elemento se encuentra dentro de un conjnuto se utiliza **in**.
+
+El resultado será **True** si el elemento se encuentra en la lista y **False** de no ser así.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+print("Facebook" in companies)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+print("NVIDIA" in companies)
+```
+
+### Agregar y remover elementos
+
+Se pueden agregar elementos al final de un conjunto utilizando **add()** y se puede remover algún elemento en específico utilizando **remove()**. Dentro del paréntesis se coloca el objeto que se desea agregar o eliminar.
+
+```{python}
+companies.remove('Google')
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+companies
+```
+
+### Operaciones de conjuntos
+
+Podemos emplear los siguientes métodos para realizar operaciones entre dos conjuntos.
+
+* union
+* intersection
+* issubset
+* issuperset
+* difference
+
+```{python}
+a = {1, 2, 3, 4, 5}
+b = {2, 4, 6, 8}
+c = {4, 5}
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 34}
+a.union(b)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+a.intersection(b)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+c.issubset(a)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+b.difference(c)
+```
+
+### Intuición sobre diccionarios
+Por ejemplo, imagine que se le solicita crear una estructura de datos para almacenar numeros telefónicos de personas. Si utilizara una lista, el resultado sería el siguiente:
+
+|Índice|Número telefónico|
+|---|---|
+|0|2222-4466|
+|1|2358-0000|
+|2|2468-0246|
+
+En este caso, resultaría muy difícil buscar el número de alguna persona en específico. En cambio, si utilizamos diccionarios, obtendríamos lo siguiente:
+
+|Nombre|Número telefónico|
+|---|---|
+|William|2222-4466|
+|Emma|2358-0000|
+|John|2468-0246|
+
+Ahora, si quisiera obtener el número teléfonico de alguna persona, solo tendría que buscarlo por su nombre.
+
+## Diccionarios
+
+* Permiten almacenar cualquier tipo de objeto asociando un identificador (key) y un valor (value).
+* Se pueden modificar los valores de los identificadores.
+* Los elementos no tienen un orden específico.
+
+### Creación de Diccionarios
+
+Se emplea la siguiente sintaxis.
+
+
+```
+nombreDiccionario = {key0: value0, key1: value1, key2: value2, ...}
+```
+
+
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+tel = {"William":22224466, "Emma":23580000, "John":24680246}
+print(tel)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+print(tel.keys())
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+print(tel.values())
+```
+
+## Indexación
+
+Para acceder a elementos de un diccionario se utiliza el operador de indexación y se especifica el identificar o *key* [index].
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+print(tel["William"])
+```
+
+### Asignación de un elemento
+
+Para asignar un valor a un identificar, se especifica el elemento (o elementos) que se desean modificar accediendo a él y se le asigna su nuevo valor.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+tel["John"] = 22222222
+print(tel)
+```
+
+### Agregar y remover elementos
+
+Se pueden agregar elementos a un diccionario utilizando el operador de indexación y especificando el nombre del nuevo identificador, luego, se coloca el operador de asignación y se asigna un valor.
+
+
+Para eliminar un identificar de un diccionario se puede utilizar el método **pop()**.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+print(tel)
+```
+
+```{python}
+tel['Diego'] = 22009999
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+tel.pop('Emma')
+```
+
+### Recorrer elementos
+
+Podemos emplear un búcle for para recorrer por los elementos de un diccionario.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 69}
+for nombre in tel:
+  print(nombre)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 69}
+for v in tel:
+  print(v, tel[v])
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 69}
+for k, v in tel.items():
+  print(k, v)
+```
+
+### Intuición sobre matrices
+Se le proporciona la siguiente tabla con algunos de los mejores videojuegos que han existido.
+
+|Game|Year|Genre|
+|---|---|---|
+|Bioshock|2007|First-person shooter|
+|Breath of the Wild|2017|Action-adventure|
+|Grand Theft Auto V|2013|Action-adventure|
+|Minecraft|2011|Sandbox|
+|Portal 2|2011|Puzzle-platformer|
+|Resident Evil 4|2005|Survival Horror|
+|The Last of Us|2013|Action-adventure|
+
+Usted se propone jugar cada título por semana, iniciando con el género *Acción-Aventura*:
+
+|Game|Year|Genre|
+|---|---|---|
+|Breath of the Wild|2017|Action-adventure|
+|Grand Theft Auto V|2013|Action-adventure|
+|The Last of Us|2013|Action-adventure|
+
+De la tabla, usted se da cuenta de que ya ha jugado *Breath of the Wild* previamente, por lo que decide reemplazarlo por otro título del mismo año y género. Busca la fila correspondiente y únicamente modifica el nombre.
+
+|Game|Year|Genre|
+|---|---|---|
+|Uncharted: The Lost Legacy|2017|Action-adventure|
+|Grand Theft Auto V|2013|Action-adventure|
+|The Last of Us|2013|Action-adventure|
+
+Por último, cuando llega a la semana 3, se da cuenta de que *The Last of Us* solo se encuentra disponible para PS3/PS4 y usted está jugando en PC. Así que decide cambiar por otro juego reciente que llamó su atención, en este caso, es necesario modificar la fila completa.
+
+|Game|Year|Genre|
+|---|---|---|
+|Uncharted: The Lost Legacy|2017|Action-adventure|
+|Grand Theft Auto V|2013|Action-adventure|
+|The Witcher 3: Wild Hunt|2015|Action role-playing|
+
+## Matrices
+Una matriz es una lista de listas, también se le conoce como lista 2D. Se puede acceder por listas o por elementos [lista][elemento].
+
+### Creación de Matrices
+Se emplea la siguiente **sintaxis**.
+```Python
+nombreMatriz = [[elemento0, elemento1,...],[elemento0, elemento1],...]
+```
+Los elementos pueden ser de cualquier tipo y no necesariamente deben ser todos de la misma clase.
+
+```{python}
+games = [["Bioshock", 2007, "First-person shooter"],
+         ["Breath of the Wild", 2017, "Action-adventure"],
+         ["Grand Theft Auto V", 2013, "Action-adventure"],
+         ["Minecraft", 2011, "Sandbox"],
+         ["Portal 2", 2011, "Puzzle-platformer"],
+         ["Resident Evil 4", 2005, "Survival Horror"],
+         ["The Last of Us", 2013, "Action-adventure"]]
+print(games)
+```
+
+### Elementos de una matriz
+Se trabajan de la misma forma que las listas. Considerar que ahora se trabaja con una lista dentro de una lista.
+
+### Número de elementos
+Para obtener el número de listas, se utiliza el método len().
+
+```{python}
+print("número de listas:",len(games)) #número de listas
+```
+
+### Acceder o asignar elementos
+
+Para acceder o asignar elementos, se debe indicar la posición utilizando [ ][ ] especificando la *lista* y *elemento*.
+
+```{python}
+print(games[0]) #acceder a la primera lista
+print(games[3][2]) #acceder a la cuarta lista, tercer elemento
+```
+
+```{python}
+print(games[-1]) #desplegar la última lista
+games[-1] = ["The Witcher 3: Wild Hunt", 2015, "Action role-playing"] #asignar nuevo valor a lista 7
+print(games[-1]) #desplegar la última lista
+```
+
+## Recorrer elementos de una matriz
+
+Para recorrer una matriz, se emplea la siguiente **sintaxis**:
+```Python
+for i in range(0, len(nombreMatriz)):
+    bloque de código
+```
+
+```{python}
+for i in range(0, len(games)):
+    print(games[i][0]) #desplegar los títulos de cada juego
+```
+
+```{python}
+for i in range(0, len(games)):
+    if(games[i][2]=="Action-adventure"): #si el género del juego es Acción-aventura
+        print(games[i]) #desplegar el título del juego
+```
+

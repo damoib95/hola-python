@@ -1,0 +1,120 @@
+---
+jupyter: python3
+---
+
+*Diego Morales - 20 de abril de 2020*
+
+# Clases y objetos
+
+![whos_that_pokemon.jpg](attachment:whos_that_pokemon.jpg)
+
+### Atributos (características)
+1. Tipo
+2. Altura
+3. Peso
+4. Nivel
+5. HP (Hit Points)
+
+### Métodos (acciones)
+1. Atacar (movimientos)
+2. Defender (movimientos)
+3. Aumentar de nivel
+4. Evolucionar
+
+![pokemon.jpg](attachment:pokemon.jpg)
+
+## Clases
+Base (o plano) para crear objetos. Compuesta por atributos y métodos.
+
+### Creación de Clases
+Se emplea la siguiente **sintaxis**.
+```Python
+class NombreClase:
+    def __init__(self, parámetro1, parámetro2, ...):
+        self.atributo1 = parámetro1
+        self.atributo2 = parámetro2
+    def método1(self, parámetro1, parámetro2):
+        bloque de código
+```
+
+```{python}
+class Pokemon:
+    # constructor
+    def __init__(self, tipo, nivel, ataque1, ataque2):
+        # atributos
+        self.tipo = tipo
+        self.nivel = nivel
+        self.ataque1 = ataque1
+        self.ataque2 = ataque2
+    # métodos = acciones
+    def pokedex(self):
+        print("-Tipo:",self.tipo)
+        print("-Nivel:",self.nivel)
+        print("-Ataque 1:",self.ataque1[0],"-Daño:",self.ataque1[1])
+        print("-Ataque 2:",self.ataque2[0],"-Daño:",self.ataque2[1])
+    def atacar1(self):
+        print(f"¡Ha usado {self.ataque1[0]}!")
+    def atacar2(self):
+        print(f"¡Ha usado {self.ataque2[0]}!")
+    def subirNivel(self):
+        self.nivel += 1
+        print(f"¡Ha subido al nivel {self.nivel}!")
+```
+
+## Objetos
+Instancia de una clase.
+
+### Crear un objeto
+Se emplea la siguiente **sintaxis**.
+```Python
+nombreObjeto = nombreClase(atributo1, atributo2, ...)
+```
+
+```{python}
+#creación de un objeto de tipo Pokemon
+charmander = Pokemon("Fuego", 1,["Arañazo", 6], ["Lanzallamas", 70])
+```
+
+
+```{python}
+charmander.pokedex() #llamar al método pokedex
+```
+
+```{python}
+charmander.atacar1() #llamar al método atacar1
+```
+
+```{python}
+charmander.subirNivel() #llamar al método subirNivel
+```
+
+```{python}
+#creación de un segundo objeto de tipo Pokemon
+pikachu = Pokemon("Eléctrico", 17,["Ataque Rápido", 8], ["Rayo", 80])
+```
+
+```{python}
+pikachu.pokedex()
+```
+
+```{python}
+pikachu.atacar1() #llamar al método atacar1
+```
+
+```{python}
+pikachu.ataque1 = ["Voltio Cruel", 90] #asignar nuevo ataque
+```
+
+```{python}
+pikachu.atacar1() #llamar al método atacar1
+```
+
+```{python}
+pikachu.subirNivel()
+```
+
+```{python}
+pikachu.pokedex()
+```
+
+

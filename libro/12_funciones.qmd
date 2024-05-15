@@ -1,0 +1,110 @@
+---
+jupyter: python3
+---
+
+*Diego Morales - 24 de marzo de 2020*
+
+# Funciones
+Bloque de código empleado para realizar una acción o retornar un valor.
+
+
+### e.g.
+La función print realiza una **acción**. Despliega el string dentro del paréntesis (parámetro).
+
+```{python}
+print("Bienvenido a mi programa")
+```
+
+### e.g.
+La función pow **retorna** un valor. Calcula la base (parámetro 1) elevada al exponente (parámetro 2).
+
+$2^{3}=2\cdot2\cdot2=8$
+
+```{python}
+import math
+num = math.pow(2,3)
+print(num)
+```
+
+## Definición de funciones propias
+Para crear una función propia se emplea la siguiente **sintaxis**.
+```Python
+def nombreFuncion(parámetro1, parámetro2, etc):
+    bloque de código
+    return expresión
+```
+El bloque de código de la función emplea indentación (tab). La utilización de parámetros y el retorno de valores es opcional.
+
+### Funciones que realizan una acción
+### e.g.
+Se quiere evaluar si tres alumnos aprobaron el curso (nota mayor a 60) y desplegar el resultado.
+
+| Estudiante | Nota   |
+|-|-|
+|John|80|
+|Sarah|97|
+|Michael|54|
+
+Para ello, se evalúa cada nota y se despliega cada resultado.
+
+```{python}
+if(80>60):
+    print("John aprobó el curso")
+else:
+    print("John reprobó el curso")
+
+if(97>60):
+    print("Sarah aprobó el curso")
+else:
+    print("Sarah reprobó el curso")
+
+if(54>60):
+    print("Michael aprobó el curso")
+else:
+    print("Michael reprobó el curso")
+```
+
+Sin embargo, este código es muy ineficiente debido a que es repetitivo. En este caso, resulta conveniente crear una función.
+
+Se crea una función llamada *evaluar*, la cual emplea dos parámetros: *nombre* y *nota*.
+
+```{python}
+def evaluar(nombre, nota):
+    if(nota>60):
+        print(nombre, "aprobó el curso")
+    else:
+        print(nombre, "reprobó el curso")
+```
+
+Ahora que se tiene una función, simplemente bastaría con llamarla y especificar los parámetros. La función realiza la acción de imprimir el resultado.
+
+```{python}
+evaluar("John", 80)
+evaluar("Sarah", 97)
+evaluar("Michael", 54)
+```
+
+## Funciones que retornan un valor
+En ciertas ocasiones, se desea retornar un valor para seguirlo utilizando en el código en lugar de simplemente desplegar el resultado.
+
+### e. g.
+Se quiere crear una función que calcule el precio en oferta de un producto. Al final se calcula el monto total de la compra.
+
+| Precio Original (Q)| Descuento (%)   |
+|-|-|
+|100|25|
+|35|60|
+|70|50|
+|10|5|
+
+```{python}
+#| scrolled: true
+def oferta(precioOriginal, descuento):
+    precioActual = precioOriginal*(100-descuento)/100
+    return precioActual
+
+total = oferta(100,25) + oferta(35, 60) + oferta(70, 50) + oferta(10,5)
+print("Total: Q",total)
+```
+
+

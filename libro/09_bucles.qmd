@@ -1,0 +1,240 @@
+---
+title: Búcles
+jupyter: python3
+---
+
+
+Los búcles se utilizan para repetir la ejecución un conjunto de instrucciones (iteración).
+
+Existen dos tipos de búcles:
+* while
+* for
+
+
+
+
+## while
+
+El búcle *while* permite ejecutar un conjunto de instrucciones siempre que la condición sea **True**.
+
+Utiliza la siguiente *sintaxis*:
+
+```
+while condición:
+  instrucción1
+  instrucción2
+  ...
+  instrucciónN
+```
+
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 104}
+pizza = 4
+while pizza > 0:
+  print("Porción entregada.")
+  pizza -= 1
+
+print("No quedan más porciones.")
+```
+
+### break
+
+Detiene la ejecución de un búcle, aunque la condición sea verdadera.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 139}
+acceso = False #flag
+while acceso == False:
+  ingreso = input("Código de acceso: ")
+  if ingreso == "5426":
+    print("Acceso concedido.")
+    acceso = True
+  else:
+    print("Código inválido.")
+
+print("Ingresando al sistema.")
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 139}
+while True:
+  ingreso = input("Código de acceso: ")
+  if ingreso == "5426":
+    print("Acceso concedido.")
+    break
+  else:
+    print("Código inválido.")
+
+print("Ingresando al sistema.")
+```
+
+### continue
+
+Salta la iteración actual y continúa con la siguiente.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+number = '124,256,312'
+result = ''
+index = 0
+
+while index<len(number):
+  if number[index]==',':
+    index += 1
+    continue
+  result += number[index]
+  index += 1
+
+print(result)
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+result = number.replace(',','')
+print(result)
+```
+
+### Ejemplo
+
+A continuación, crearemos un juego sencillo en el cual seleccionaremos un número al azar y el usuario deberá adivinar cuál es el número.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 572}
+import random
+
+number = random.randint(1,9)
+guess = 0
+
+print("Welcome to Guess a Number")
+while guess != number:
+  print("\nChoose a number from 1 to 9: ")
+  print("Write -1 if you want to exit.")
+  guess = int(input())
+  if guess==-1:
+    break
+  if guess>9:
+    print("Your number is too big.")
+    continue
+  if guess==number:
+    print("Congratulations!")
+  else:
+    print("Try again.")
+print("Thank you for playing")
+```
+
+
+## for
+
+El búcle for se utiliza para realizar iteraciones sobre una secuencia (lista, tupla, diccionario, conjunto, string).
+
+Se ejecuta el conjunto de instrucciones hasta iterar sobre la secuencia completa.
+
+```{python}
+pares = [0, 2, 4, 6, 8]
+for n in pares:
+  print(n)
+  print('es par.')
+
+print('Búcle finalizado')
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 104}
+nombre = 'Diego'
+for i in nombre:
+  print(i)
+```
+
+### range()
+La función *range()* retorna una secuencia de números iniciando en 0 (por defecto) e incrementando en 1 (por defecto) hasta el número indicado (sin incluirlo).
+
+Utiliza la siguiente sintaxis.
+
+```
+range(inicio, final, paso)
+```
+
+
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 191}
+for x in range(0, 10):
+  print(x)
+```
+
+### break
+
+Detiene la ejecución del búcle aunque no se haya iterado por toda la secuencia.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 87}
+personas = [0, 0, 0, 1, 0, 0]
+
+for persona in personas:
+  if persona==1:
+    break
+  print('Pato...')
+print('¡Ganso!')
+```
+
+### continue
+
+Salta la iteración actual y continúa con la siguiente.
+
+```{python}
+limite = 47
+for x in range(limite):
+    if x % 2 == 0:
+        continue
+    print(x)
+```
+
+### Ejemplo
+
+A continuación, utilizaremos un búcle for para crear un programa de cifrado.
+
+Recordemos que los string son cadenas de caracteres. Cada caracter se puede representar por un número (ver [ASCII Chart](https://python-reference.readthedocs.io/en/latest/docs/str/ASCII.html)).
+
+Podemos utilizar la función *ord()* para determinar el valor decimal de un caracter. También podemos utilizar la función *chr()* para determinar el caracter correspondiente a un valor decimal.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+print(ord('A'))
+```
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+print(chr(68))
+```
+
+El siguiente código utiliza un búcle *for* para codificar un texto a partir de una llave *k*.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+texto = "Me gusta programar"
+k = 3
+cifrado = ""
+for letra in texto:
+    x = ord(c)
+    x = x + k
+    c2 = chr(x)
+    cifrado += c2
+print(cifrado)
+```
+
+El siguiente realiza el procedimiento inverso. En este caso, se ingresa un texto cifrado y se decodifica a partir de la llave correcta.
+
+```{python}
+#| colab: {base_uri: 'https://localhost:8080/', height: 35}
+cifrado = 'Ph#jxvwd#surjudpdu'
+k = 3
+decodificacion= ""
+for c in cifrado:
+    x = ord(c)
+    x = x - k
+    c2 = chr(x)
+    decodificacion += c2
+print(decodificacion)
+```
+

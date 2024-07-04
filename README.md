@@ -11,6 +11,7 @@ He creado este repositorio con el objetivo de compartir mis conocimientos con to
 [Códigos en Google Colab 📝](https://drive.google.com/drive/folders/1B7GhO8EOCMAPePnZurR1_wChrZVYNsOb?usp=share_link)
 
 ## Tabla de Contenidos (TOC)
+0. Configuración
 1. Introducción
 2. Variables
 3. Tipos de datos

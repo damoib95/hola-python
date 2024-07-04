@@ -4,7 +4,7 @@ En este capítulo creamos nuestro primer código de programación en Python, el 
 
 ## Mi primer programa
 
-La función ```print``` permite *desplegar mensajes* en la pantalla. Escribe el siguiente código teniendo cuidado de escribir correctamente el nombre de la función, luego, dentro de paréntesis deberás colocar tu mensaje utilizando comillas simples, ``'``, o dobles, ``"``, al inicio
+La función ```print()``` permite *desplegar mensajes* en la pantalla. Escribe el siguiente código teniendo cuidado de escribir correctamente el nombre de la función, luego, dentro de paréntesis deberás colocar tu mensaje utilizando comillas simples, ``'``, o dobles, ``"``, al inicio
 y al final.
 
 ```{python}
@@ -18,3 +18,28 @@ Si Python interpretó correctamente tu instrucción, entonces, deberías ver el 
 Es una práctica común crear el código para desplegar un mensaje de ```Hello, world!``` cuando se aprende un lenguaje nuevo de programación para comprobar que todo se encuentra configurado correctamente.
 :::
 
+## Ejercicios
+
+1. Escribe un programa que muestre el siguiente mensaje `"Mi nombre es X. Nací en el año Y"` remplazando la `X` y la `Y` por tu nombre completo y edad.
+2. Separa el mensaje anterior en dos partes utilizando una coma, `,`, para separar los mensajes. Por ejemplo:
+
+```{python}
+#| label: code-ch1-ej2
+print('mensaje1', 'mensaje2')
+```
+
+
+3. Ahora intenta separar el mensaje en dos partes llamando dos veces a la función `print` en dos líneas distintas. Por ejemplo:
+
+
+```{python}
+#| label: code-ch1-ej3
+print('mensaje1')
+print('mensaje2')
+```
+
+## Preguntas
+
+1. ¿Qué sucede si no se escribe correctamente la función o no se encierra el mensaje dentro de comillas?
+2. ¿Cómo puedo mostrar varios mensajes en una misma función `print`?
+3. ¿Cuál es la diferencia entre desplegar varios mensajes utilizando una misma función `print` y utilizándola varias veces a la función en líneas separadas?

@@ -4,9 +4,10 @@ project:
 book:
   title: "¡Hola, Python!"
   author: "Diego Morales"
-  date: "05/15/2024"
+  date: "07/03/2024"
   chapters:
     - index.qmd
+    - 00_config.qmd
     - 01_intro.qmd
     - 02_var.qmd
     - 03_tipos.qmd

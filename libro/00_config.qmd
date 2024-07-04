@@ -1,0 +1,53 @@
+# Configuración
+
+En este capítulo realizaremos la configuración de Python para crear códigos. Iniciaremos explorando algunas de las opciones disponibles y luego mostraremos las instrucciones para instalar los programas en nuestra computadora, o bien, para acceder al servicio en la nube.
+
+## Instalación de Python
+
+### Windows
+
+1. Ve al sitio oficial de Python.
+2. Haz clic en "Downloads" en la parte superior.
+3. Selecciona "Download Python [versión actual]" para descargar el instalador de Windows.
+4. Abre el archivo descargado (generalmente llamado python-[versión]-amd64.exe o similar).
+5. Marca la casilla "Add Python to PATH" al principio del instalador.
+6. Haz clic en "Install Now".
+7. Una vez finalizada la instalación, Python y pip (el gestor de paquetes de Python) estarán disponibles en tu sistema.
+
+### macOS
+
+1. Ve al sitio oficial de Python.
+2. Haz clic en "Downloads" en la parte superior.
+3. Selecciona "Download Python [versión actual]" para descargar el instalador de macOS.
+4. Abre el archivo descargado (python-[versión]-macosx10.[n].pkg o similar).
+5. Sigue las instrucciones del instalador y acepta las configuraciones predeterminadas.
+6. El instalador configurará Python y pip en tu sistema.
+
+## Entornos de Desarrollo
+
+ Un entorno de desarrollo es una aplicación o conjunto de aplicaciones que facilita la escritura, prueba y depuración del código. Dependiendo de nuestras necesidades y nivel de experiencia, podemos optar por diferentes tipos de entornos. A continuación, se describen brevemente algunos de los entornos de desarrollo más comunes y útiles para programar en Python
+
+## Editores de Texto
+
+Un editor de texto es una herramienta básica que permite escribir y editar código. Ejemplos populares incluyen Notepad++ (Windows), Sublime Text y Atom. Aunque carecen de funcionalidades avanzadas como la depuración, son ligeros y rápidos, ofreciendo características como el resaltado de sintaxis y el autocompletado.
+
+## IDLE de Python
+
+IDLE es el entorno de desarrollo oficial que viene con la instalación de Python. Es ideal para principiantes debido a su simplicidad. Incluye un editor de texto con resaltado de sintaxis, una consola interactiva y herramientas básicas de depuración. Es una opción ligera y fácil de usar para empezar a programar en Python sin necesidad de instalar software adicional.
+
+## Anaconda: Jupyter Notebook y Spyder
+
+Anaconda es una distribución de Python que incluye una gran cantidad de paquetes científicos y herramientas de desarrollo. Jupyter Notebook es una aplicación web que permite crear y compartir documentos que contienen código, texto, y visualizaciones, siendo muy popular en el ámbito científico y educativo. Spyder es un entorno de desarrollo interactivo (IDE) que se asemeja a MATLAB, con un editor avanzado, herramientas de depuración y un explorador de variables.
+
+## Visual Studio Code
+
+Visual Studio Code (VS Code) es un editor de código fuente desarrollado por Microsoft. Es altamente configurable y soporta una gran variedad de lenguajes de programación, incluyendo Python. Ofrece características avanzadas como depuración integrada, control de versiones, extensiones para el desarrollo en Python y una terminal incorporada. Es una de las herramientas más completas y populares entre los programadores.
+
+## Google Colab
+
+Google Colab (Colaboratory) es un servicio basado en la nube que permite ejecutar cuadernos Jupyter en la infraestructura de Google. Es especialmente útil para el aprendizaje automático y análisis de datos, ya que proporciona acceso a recursos de computación potentes de forma gratuita. Permite colaborar en tiempo real con otros usuarios y no requiere instalación de software en el equipo local.
+
+## PyCharm
+
+PyCharm es un entorno de desarrollo integrado (IDE) específicamente diseñado para Python, desarrollado por JetBrains. Tiene dos versiones: una comunidad gratuita y una versión profesional de pago con más funcionalidades. Ofrece características avanzadas como autocompletado de código, refactorización, depuración integrada, pruebas unitarias y un poderoso editor. Es muy útil para proyectos grandes y complejos.
+
